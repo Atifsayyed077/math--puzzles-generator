@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Math Puzzle Generator — Sudoku / Kakuro / Lights Out</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Math Puzzle Generator</h1>
+
+    <section class="row">
+      <div class="card">
+        <h2>Sudoku</h2>
+        <div class="controls">
+          <label>Difficulty:
+            <select id="sudoku-diff">
+              <option value="40">Easy</option>
+              <option value="50" selected>Medium</option>
+              <option value="60">Hard</option>
+            </select>
+          </label>
+          <button id="generate-sudoku">Generate Sudoku</button>
+          <button id="check-sudoku">Check</button>
+          <button id="solve-sudoku">Solve</button>
+          <button id="save-sudoku">Save</button>
+          <button id="load-sudoku">Load</button>
+        </div>
+        <div id="sudoku-board" class="grid9"></div>
+      </div>
+
+      <div class="card">
+        <h2>Kakuro (sample)</h2>
+        <div class="controls">
+          <button id="load-sample-kakuro">Load Sample</button>
+          <button id="check-kakuro">Check</button>
+          <button id="save-kakuro">Save</button>
+          <button id="load-kakuro">Load</button>
+        </div>
+        <div id="kakuro-board" class="kakuro-grid"></div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="card">
+        <h2>Lights Out (Logic)</h2>
+        <div class="controls">
+          <label>Size:
+            <select id="lights-size"><option>5</option><option>4</option><option>6</option></select>
+          </label>
+          <button id="new-lights">New</button>
+          <button id="solve-lights">Reset</button>
+          <button id="save-lights">Save</button>
+          <button id="load-lights">Load</button>
+        </div>
+        <div id="lights-board" class="lights-grid"></div>
+      </div>
+
+      <div class="card">
+        <h2>Files</h2>
+        <div class="controls">
+          <button id="export-json">Download All (JSON)</button>
+          <input id="import-file" type="file" accept=".json" />
+        </div>
+        <div class="notes">
+          <p>Save & load uses localStorage. You can download all puzzles as JSON or upload later.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
